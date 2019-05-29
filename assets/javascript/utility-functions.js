@@ -14,3 +14,7 @@ const createPlaceholder = (stringToReplace, placeholderCharacter) => {
 
 // TEST:
 // console.log(createPlaceholder("blah", "_"));
+
+// NOTE- "var" is used here deliberately so that "placeholder" can be read outside the "for" loop
+// without having to be explicitly returned like "let" would
+
