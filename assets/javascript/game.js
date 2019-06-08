@@ -47,14 +47,21 @@
 
     // END RESET GAME FUNCTION //
 
+
     // NEW ROUND FUNCTION - Starts a new round but retains the win/loss count //
-        //resets graphic to original state
+    const newRound = () => {
+
+    }
+        // resets number of lives to original state
+            // graphic representing that will need to be updated
         //calls Computer Select Answer function
             // compAnswer = selectAnswer();
-        //calls utility function createPlaceholder("computer answer here", "_");
+        // calls utility function createPlaceholder(compAnswer, "_");
+        // outputs placeholder to UI
     // END NEW ROUND FUNCTION //
 
     // COMPUTER SELECT ANSWER FUNCTION //
+        //selectAnswer
     // END COMPUTER SELECT ANSWER FUNCTION //
 
     // CHECK LETTER GUESS FUNCTION - compares user's letter to the characters in compAnswer //
@@ -63,7 +70,8 @@
     // WIN CHECK FUNCTION //
     // END WIN CHECK FUNCTION //
 
-
+    // LOSS CHECK FUNCTION //
+    // END LOSS CHECK FUNCTION //
 
 // ------- END FUNCTION Definitions -------- //
 
