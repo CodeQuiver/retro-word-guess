@@ -18,8 +18,8 @@
     // User's Letter Guess
     let userLetter = "";
 
-    // List of wrong letters guessed
-    let wrongGuessLetters = [];
+    // List of all letters guessed - wrong and correct, just everything used so far
+    let pastGuessLetters = [];
 
     // Life count - initializes at 6 to match classic hangman game # of chances
     let livesLeft = 6;
@@ -71,7 +71,7 @@
     // CHECK LETTER GUESS FUNCTION - compares userLetter to the characters in compAnswer //
     // using local naming within the function to avoid leakage //
     const checkLetterGuess = (letter, answer) => {
-        if (wrongGuessLetters.indexOf(letter) !== -1) {
+        if (pastGuessLetters.indexOf(letter) !== -1 ) {
             // if already guessed
             // display text "sorry, you already guessed that letter"
             // optionally play a negative sound and highlight the letter in a bright color
@@ -91,14 +91,11 @@
             }
             
         } else {
-            
-        }
-        
-        
-
-        // if a letter matches
+            // if a letter matches
             // call function to update the placeholder to add the letter to the partial word shown
             // win check
+        }
+        
     }
         
 
