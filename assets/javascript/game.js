@@ -12,8 +12,8 @@
         // Category 5: [array of words]
     // END WORD List Object
 
-    // Computer's Answer
-    let compAnswer = "Sorry, I need to pick a word!";
+    // Computer's Answer - should be an array
+    let compAnswer = [];
 
     // User's Letter Guess
     let userLetter = "";
@@ -50,28 +50,65 @@
 
     // NEW ROUND FUNCTION - Starts a new round but retains the win/loss count //
     const newRound = () => {
-
-    }
         // resets number of lives to original state
+        livesLeft = 6;
             // graphic representing that will need to be updated
         //calls Computer Select Answer function
             // compAnswer = selectAnswer();
         // calls utility function createPlaceholder(compAnswer, "_");
-        // outputs placeholder to UI
+        // prints placeholder
+
+    }
+        
     // END NEW ROUND FUNCTION //
 
     // COMPUTER SELECT ANSWER FUNCTION //
         //selectAnswer
+        // convert string to array
+        // return as new compAnswer
     // END COMPUTER SELECT ANSWER FUNCTION //
 
-    // CHECK LETTER GUESS FUNCTION - compares user's letter to the characters in compAnswer //
+    // CHECK LETTER GUESS FUNCTION - compares userLetter to the characters in compAnswer //
+    // using local naming within the function to avoid leakage //
+    const checkLetterGuess = (letter, answer) => {
+        if (wrongGuessLetters.indexOf(letter) !== -1) {
+            // if already guessed
+            // display text "sorry, you already guessed that letter"
+            // optionally play a negative sound and highlight the letter in a bright color
+            // then do nothing else
+        
+        }
+        else if (answer.indexOf(letter) === -1) {
+            // if no match
+            // subtract 1 from livesLeft
+            livesLeft --;
+
+            // check for round loss
+            if (livesLeft > 0) {
+                // if 
+            } else {
+                // round was lost, call gameOver function    
+            }
+            
+        } else {
+            
+        }
+        
+        
+
+        // if a letter matches
+            // call function to update the placeholder to add the letter to the partial word shown
+            // win check
+    }
+        
+
     // END CHECK LETTER GUESS FUNCTION //
 
     // WIN CHECK FUNCTION //
     // END WIN CHECK FUNCTION //
 
-    // LOSS CHECK FUNCTION //
-    // END LOSS CHECK FUNCTION //
+    // GAME OVER FUNCTION //
+    // END GAME OVER FUNCTION //
 
 // ------- END FUNCTION Definitions -------- //
 
