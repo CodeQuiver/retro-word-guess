@@ -24,14 +24,27 @@
     // Life count - initializes at 6 to match classic hangman game # of chances
     let livesLeft = 6;
 
+    // Wins
+    let userWins = 0;
+
+    // Losses
+    let UserLosses = 0;
+
 // ------- END INITIALIZE Global Variables --------//
 
 
 // ------- FUNCTION Definitions -------- //
 
     // RESET GAME FUNCTION - Resets game entirely, including returning all scores to 0 //
+    const resetGame = () => {
         //set wins and losses both to 0
+        userWins = 0;
+        userLosses = 0;
+
         //calls new round function to reset everything else
+        newRound();
+    }
+
     // END RESET GAME FUNCTION //
 
     // NEW ROUND FUNCTION - Starts a new round but retains the win/loss count //
