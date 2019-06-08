@@ -18,6 +18,11 @@
     // User's Letter Guess
     let userLetter = "";
 
+    // List of wrong letters guessed
+    let wrongGuessLetters = [];
+
+    // Life count - initializes at 6 to match classic hangman game # of chances
+    let livesLeft = 6;
 
 // ------- END INITIALIZE Global Variables --------//
 
@@ -25,9 +30,15 @@
 // ------- FUNCTION Definitions -------- //
 
     // RESET GAME FUNCTION - Resets game entirely, including returning all scores to 0 //
+        //set wins and losses both to 0
+        //calls new round function to reset everything else
     // END RESET GAME FUNCTION //
 
     // NEW ROUND FUNCTION - Starts a new round but retains the win/loss count //
+        //resets graphic to original state
+        //calls Computer Select Answer function
+            // compAnswer = selectAnswer();
+        //calls utility function createPlaceholder("computer answer here", "_");
     // END NEW ROUND FUNCTION //
 
     // COMPUTER SELECT ANSWER FUNCTION //
