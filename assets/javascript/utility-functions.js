@@ -18,3 +18,17 @@ const createPlaceholder = (stringToReplace, placeholderCharacter) => {
 // NOTE- "var" is used here deliberately so that "placeholder" can be read outside the "for" loop
 // without having to be explicitly returned like "let" would
 
+
+
+
+
+//  function for computer to pick a random choice from an array
+
+// ==== TODO === Verify if this works iterating over objects
+    //outputs outputAnswer
+const newAnswer = (choices) => {
+    let outputAnswer = choices[Math.floor(Math.random() * choices.length)];
+    // console.log("computer answer is " + outputAnswer);
+    return outputAnswer;
+}
+

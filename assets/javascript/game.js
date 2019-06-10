@@ -175,7 +175,7 @@
     
     // START GAME
     // pick answer - call selectAnswer() function
-    compAnswer = selectAnswer(wordListObject); //will output an array of letters
+    compAnswer = selectAnswer(wordListObject); //will output an array of letters, this is the word user has to match
 
     // Placeholder generated - assigned to placeholderCompAnswerArray
         // then display placeholder on page
