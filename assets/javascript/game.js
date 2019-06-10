@@ -16,7 +16,7 @@
     let compAnswer = [];
 
     // Placeholder Answer Array - will be the displayed version of the answer showing blanks and the guessed letters
-    let placeholderCompAnswerArray = [];
+    let placeholderCompAnswerArray = ["_"];
 
     // User's Letter Guess
     let userLetter = "";
@@ -66,7 +66,18 @@
     // END NEW ROUND FUNCTION //
 
     // COMPUTER SELECT ANSWER FUNCTION //
-        //selectAnswer
+    const selectAnswer = () => {
+        // picks a word from list
+        // let stringAnswer = 
+            // 1- random cetegory selection from WORD List Object
+                // optional- store name of category in variable
+            
+            // 2- random word selection from values within category
+
+        // convert word to an array of letters
+        // assign array of letters to compAnswer
+        // compAnswer = stringAnswer.split("");
+    }
         // convert string to array
         // return as new compAnswer
     // END COMPUTER SELECT ANSWER FUNCTION //
@@ -111,8 +122,7 @@
                     placeholderCompAnswerArray[answerIndex] = answerLetter; 
                 }
             });
-            // call win check function
-            // if they haven't won it will return the game to the waiting for user state
+
         }
         
     }
@@ -143,17 +153,34 @@
         const gameOver = () => {
             // add 1 to losses
             UserLosses ++;
-            // trigger "GAME OVER" pop-up with reset game or play another round choices
+            // trigger "GAME OVER" pop-up with 
+                // reset game or 
+                // play another round choices
 
         }
     // END GAME OVER FUNCTION //
 
 // ------- END FUNCTION Definitions -------- //
 
+
+
 // ------- MAIN PROGRAM FLOW ------- //
+    // Initial page load, variables initialized
+    
+    // START GAME
+    // pick answer - call selectAnswer() function
+
+    // Placeholder generated - assigned to placeholderCompAnswerArray
+        // then display placeholder on page
+
+    // WAITING STATE - Listening for user input
+    
+    // onKeyUp - when user hits a key check for a match with the answer
 
 
-
+    // call win check function
+    winCheck(placeholderCompAnswerArray);
+    // if they haven't won it will return the game to the waiting for user state
 
 
 
