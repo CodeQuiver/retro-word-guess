@@ -178,6 +178,7 @@
     compAnswer = selectAnswer(wordListObject); //will output an array of letters, this is the word user has to match
 
     // Placeholder generated - assigned to placeholderCompAnswerArray
+    createPlaceholder("blah", "_");
         // then display placeholder on page
 
     // WAITING STATE - Listening for user input
