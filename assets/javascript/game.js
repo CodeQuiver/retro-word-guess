@@ -72,20 +72,20 @@
     const selectAnswer = (object) => {
         object;
         // picks a word from list
-        let stringAnswer = "DEFAULT FOR NOW";
+        let stringAnswer = "DEFAULT";
             // 1- random category selection from WORD List Object
                 // optional- store name of category in variable
             
             // 2- random word selection from values within category
 
 
-        
-        // Placeholder generated - later assigned to placeholderString
-        let placeholder = createPlaceholder(stringAnswer, "_");
 
         // convert word to an array of letters
         // assign array of letters to arrayAnswer
         let arrayAnswer = stringAnswer.split("");
+
+        // Placeholder generated - input and output format are both strings
+        let placeholder = createPlaceholder(stringAnswer, "_");
 
         // return both values to be assigned to globals when function is called
         return {
@@ -96,6 +96,7 @@
         // convert string to array
         // return as new compAnswer
     // END COMPUTER SELECT ANSWER FUNCTION //
+
 
     // CHECK LETTER GUESS FUNCTION - compares userLetter to the characters in compAnswer //
     // using local naming within the function to avoid leakage //
@@ -148,7 +149,8 @@
 
     // WIN CHECK FUNCTION //
         const winCheck = () => {
-            // if no placeholder characters are left in the answerArray
+            // if no placeholder characters are left
+            // or can do this by checking each letter in placeholder against the answer
             if (condition) {
                 
             } else {
@@ -196,14 +198,18 @@
     // WAITING STATE - Listening for user input
     
     // onKeyUp - when user hits a key check for a match with the answer
+        // checkLetterGuess(letter, answer);
+
+            // for now everything is handled from there inside the function
+            // ===== TODO ====== move the results part of the function to this main program flow 
+            // ... area so it doesn't end up containing half the program inside the checkletterguess function
+            // ... this also allows for more modular logic so other branches can be added to the program flow later more easily
+            // ... and all in one place (here) rather than some inside different sub functions
 
 
     // call win check function
     // winCheck(placeholderString);
     // if they haven't won it will return the game to the waiting for user state
-
-
-
 
 
 
