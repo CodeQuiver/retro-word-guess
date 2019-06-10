@@ -18,8 +18,8 @@
     // Computer's Answer - should be an array with the final answer's letters in it
     let compAnswer = [];
 
-    // Placeholder Answer Array - will be the displayed version of the answer showing blanks and the guessed letters
-    let placeholderCompAnswerArray = ["_"];
+    // Placeholder String - will be the displayed version of the answer showing blanks and the guessed letters
+    let placeholderString = "_";
 
     // User's Letter Guess
     let userLetter = "";
@@ -72,17 +72,26 @@
     const selectAnswer = (object) => {
         object;
         // picks a word from list
-        // let stringAnswer = 
-            // 1- random cetegory selection from WORD List Object
+        let stringAnswer = "DEFAULT FOR NOW";
+            // 1- random category selection from WORD List Object
                 // optional- store name of category in variable
             
             // 2- random word selection from values within category
 
+
+        
+        // Placeholder generated - later assigned to placeholderString
+        let placeholder = createPlaceholder(stringAnswer, "_");
+
         // convert word to an array of letters
         // assign array of letters to arrayAnswer
+        let arrayAnswer = stringAnswer.split("");
 
-        // let arrayAnswer = stringAnswer.split("");
-        return arrayAnswer;
+        // return both values to be assigned to globals when function is called
+        return {
+            compAnswer: arrayAnswer,
+            placeholderString: placeholder
+            };
     }
         // convert string to array
         // return as new compAnswer
@@ -116,7 +125,7 @@
             
         } else {
             // if a letter matches
-            // update the placeholderCompAnswerArray to add the guessed letter to it in the correct locations
+            // update the placeholderString to add the guessed letter to it in the correct locations
             answer.forEach(answerLetter => {
                 if (answerLetter === letter) { 
                     //if the array entry matches the guessed letter
@@ -125,7 +134,7 @@
                     answerIndex = answer.indexOf(answerLetter);
 
                     //update that index in the placeholder to hold the matching letter value
-                    placeholderCompAnswerArray[answerIndex] = answerLetter; 
+                    placeholderString[answerIndex] = answerLetter; 
                 }
             });
 
@@ -174,11 +183,14 @@
     // Initial page load, variables initialized
     
     // START GAME
-    // pick answer - call selectAnswer() function
-    compAnswer = selectAnswer(wordListObject); //will output an array of letters, this is the word user has to match
 
-    // Placeholder generated - assigned to placeholderCompAnswerArray
-    createPlaceholder("blah", "_");
+    // pick answer and set up placeholder - call selectAnswer() function
+    // compAnswer = selectAnswer(wordListObject); //will output an array of letters, this is the word user has to match
+    let {compAnswer, placeholderString} = selectAnswer(wordListObject);
+        //this should output updates to the global variables compAnswer and placeholderString
+        console.log("compAnswer ARRAY = " + compAnswer + "/n placeholderString STRING = " + placeholderString);
+        
+
         // then display placeholder on page
 
     // WAITING STATE - Listening for user input
@@ -187,7 +199,7 @@
 
 
     // call win check function
-    winCheck(placeholderCompAnswerArray);
+    // winCheck(placeholderString);
     // if they haven't won it will return the game to the waiting for user state
 
 
