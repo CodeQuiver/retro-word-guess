@@ -10,6 +10,9 @@
         // Category 3: [array of words]
         // Category 4: [array of words]
         // Category 5: [array of words]
+    const wordListObject = {
+        //TODO- Fill in!
+    }
     // END WORD List Object
 
     // Computer's Answer - should be an array with the final answer's letters in it
@@ -66,7 +69,8 @@
     // END NEW ROUND FUNCTION //
 
     // COMPUTER SELECT ANSWER FUNCTION //
-    const selectAnswer = () => {
+    const selectAnswer = (object) => {
+        object;
         // picks a word from list
         // let stringAnswer = 
             // 1- random cetegory selection from WORD List Object
@@ -75,8 +79,10 @@
             // 2- random word selection from values within category
 
         // convert word to an array of letters
-        // assign array of letters to compAnswer
-        // compAnswer = stringAnswer.split("");
+        // assign array of letters to arrayAnswer
+
+        // let arrayAnswer = stringAnswer.split("");
+        return arrayAnswer;
     }
         // convert string to array
         // return as new compAnswer
@@ -169,6 +175,7 @@
     
     // START GAME
     // pick answer - call selectAnswer() function
+    compAnswer = selectAnswer(wordListObject);
 
     // Placeholder generated - assigned to placeholderCompAnswerArray
         // then display placeholder on page
