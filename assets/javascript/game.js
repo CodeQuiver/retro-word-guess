@@ -84,7 +84,7 @@
     // END COMPUTER SELECT ANSWER FUNCTION //
 
 
-    
+
     // CHECK LETTER GUESS FUNCTION - compares userLetter to the characters in compAnswerArray //
     // using local naming within the function to avoid leakage //
     const checkLetterGuess = (letter, answer) => {
@@ -173,20 +173,24 @@
     
     // START GAME
 
-    // PICK ANSWER  - 
-    // call selectAnswer() function
-    compAnswerString = selectAnswer(wordListObject); //will output the word user has to match as a string
+    // PICK ANSWER
+        // call selectAnswer() function
+        compAnswerString = selectAnswer(wordListObject); //will output the word user has to match as a string
 
-    // convert compAnswerString to an array of letters
-    compAnswerArray = stringAnswer.split("");
+        // convert compAnswerString to an array of letters so both formats available for easy use
+        compAnswerArray = compAnswerString.split("");
 
-    // set up PLACEHOLDER
-    // Placeholder generated - input and output format are both strings
-    placeholderString = createPlaceholder(stringAnswer, "_");
+    // PLACEHOLDER set up
+        // Placeholder generated - input and output format are both strings
+        placeholderString = createPlaceholder(compAnswerString, "?");
 
 
-        // TEST
-        // console.log("compAnswerArray ARRAY = " + compAnswerArray + "/n placeholderString STRING = " + placeholderString);
+    // TEST SO FAR
+    console.log(
+        "compAnswerString = " + compAnswerString 
+        + "\ncompAnswerArray = " + compAnswerArray 
+        + "\nplaceholderString = " + placeholderString
+    );
         
 
         // then display placeholder on page
