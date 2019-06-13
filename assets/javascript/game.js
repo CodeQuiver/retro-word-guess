@@ -8,6 +8,8 @@
         // Category 4: [array of words]
         // Category 5: [array of words]
     const wordListObject = {
+        Games: ["Oregon Trail", "Animal Quest", "Super Mario", "Neopets", "Monkey Island", "Gizmos and Gadgets"],
+        Technology: ["Floppy Discs", "Mix Tapes", "Laser Discs", "Overhead Projectors", "Slides"]
         //TODO- Fill in!
     }
     // END WORD List Object
