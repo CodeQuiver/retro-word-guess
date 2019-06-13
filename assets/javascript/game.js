@@ -1,6 +1,3 @@
-// import utility functions
-
-
 // ------- INITIALIZE Global Variables --------//
 
     // WORD List Object: will include several arrays of words with different video-game or retro themes
@@ -15,8 +12,9 @@
     }
     // END WORD List Object
 
-    // Computer's Answer - should be an array with the final answer's letters in it
-    let compAnswer = [];
+    // Computer's Answer - both in string and array of letters formats for different uses
+    let compAnswerArrayString = "";
+    let compAnswerArrayArray = [];
 
     // Placeholder String - will be the displayed version of the answer showing blanks and the guessed letters
     let placeholderString = "_";
@@ -60,15 +58,19 @@
         livesLeft = 6;
             // graphic representing that will need to be updated
         //calls Computer Select Answer function
-            // compAnswer = selectAnswer();
-        // calls utility function createPlaceholder(compAnswer, "_");
+            // compAnswerArray = selectAnswer();
+        // calls utility function createPlaceholder(compAnswerArray, "_");
         // prints placeholder
 
     }
         
     // END NEW ROUND FUNCTION //
 
+
+
     // COMPUTER SELECT ANSWER FUNCTION //
+    // TODO- refactor this into 3 separate functions b/c ....
+        // ... shouldn't be trying to return multiple items if I'm keeping my functions as simple as they should be
     const selectAnswer = (object) => {
         object;
         // picks a word from list
@@ -77,28 +79,13 @@
                 // optional- store name of category in variable
             
             // 2- random word selection from values within category
-
-
-
-        // convert word to an array of letters
-        // assign array of letters to arrayAnswer
-        let arrayAnswer = stringAnswer.split("");
-
-        // Placeholder generated - input and output format are both strings
-        let placeholder = createPlaceholder(stringAnswer, "_");
-
-        // return both values to be assigned to globals when function is called
-        return {
-            compAnswer: arrayAnswer,
-            placeholderString: placeholder
-            };
+        return stringAnswer;
     }
-        // convert string to array
-        // return as new compAnswer
     // END COMPUTER SELECT ANSWER FUNCTION //
 
 
-    // CHECK LETTER GUESS FUNCTION - compares userLetter to the characters in compAnswer //
+    
+    // CHECK LETTER GUESS FUNCTION - compares userLetter to the characters in compAnswerArray //
     // using local naming within the function to avoid leakage //
     const checkLetterGuess = (letter, answer) => {
         if (pastGuessLetters.indexOf(letter) !== -1 ) {
@@ -186,11 +173,20 @@
     
     // START GAME
 
-    // pick answer and set up placeholder - call selectAnswer() function
-    // compAnswer = selectAnswer(wordListObject); //will output an array of letters, this is the word user has to match
-    let {compAnswer, placeholderString} = selectAnswer(wordListObject);
-        //this should output updates to the global variables compAnswer and placeholderString
-        console.log("compAnswer ARRAY = " + compAnswer + "/n placeholderString STRING = " + placeholderString);
+    // PICK ANSWER  - 
+    // call selectAnswer() function
+    compAnswerString = selectAnswer(wordListObject); //will output the word user has to match as a string
+
+    // convert compAnswerString to an array of letters
+    compAnswerArray = stringAnswer.split("");
+
+    // set up PLACEHOLDER
+    // Placeholder generated - input and output format are both strings
+    placeholderString = createPlaceholder(stringAnswer, "_");
+
+
+        // TEST
+        // console.log("compAnswerArray ARRAY = " + compAnswerArray + "/n placeholderString STRING = " + placeholderString);
         
 
         // then display placeholder on page
